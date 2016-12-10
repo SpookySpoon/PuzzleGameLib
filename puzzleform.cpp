@@ -16,12 +16,6 @@ PuzzleForm::PuzzleForm(QWidget *parent) :
     QWidget(parent),ui(new Ui::PuzzleForm),numberOfMoves(0),elapsedSeconds(0), countScore(true)
 {
     ui->setupUi(this);
-    //В цикле ниже перебираются все кнопки пазла, включенные в gridLayout.
-    //Они одновременно добавляются как ссылки в список кнопок "puzzlePieces",
-    //а также от каждой кнопки берется сигнал, который будет запускать функцию "on_pushButton(bool mark=false)".
-    //Потом просто при нажатии кнопки функция получит имя кнопки, найдет её в сетке пазла и применит к ней функцию поиска пустой ячейки "findVacant".
-    //В этой функции я добавил булевый аргумент, потому что мне Qt не давал связать слот и сигнал с разными аргументами
-    //Так что по сути аргумент слота это просто аппендикс.
      for(int i =0;i<ui->gridLayout->count();i++)
      {
         puzzlePieces<<qobject_cast<PuzButton*>(ui->gridLayout->itemAt(i)->widget());
@@ -29,7 +23,6 @@ PuzzleForm::PuzzleForm(QWidget *parent) :
         connect(puzzlePieces.last(),SIGNAL(moved()),this, SLOT(puzzleMoved()));
         buttonInitialOrder<<(i);
      }
-     //Эта функция (по совместительству слот) перемешивает кнопки случайным образом и запускает таймер для подсчета времени на партию.
      on_buttonShuffle_clicked();
 }
 
@@ -184,10 +177,20 @@ void PuzzleForm::on_buttonCheat_clicked()
                 ui->gridLayout->addWidget(puzzlePieces.at(item),i_row,i_col,1,1);
                 item++;
             }
-            else if(item=14)
+            else if(item==14)
             {
                 ui->gridLayout->addWidget(puzzlePieces.at(item),3,3,1,1);
             }
         }
     }
+}
+
+int PuzzleForm::getMoves()
+{
+    return numberOfMoves;
+}
+
+void PuzzleForm::ubMoves(int opa)
+{
+    numberOfMoves=opa;
 }

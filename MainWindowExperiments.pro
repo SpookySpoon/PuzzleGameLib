@@ -5,14 +5,13 @@
 #-------------------------------------------------
 
 QT       += core gui
-
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = SomeLib
 TEMPLATE = lib
 CONFIG += staticlib
 
-SOURCES += main.cpp \
+SOURCES += \
     congratswindow.cpp\
     puzzleform.cpp \
     scoremanager.cpp \
