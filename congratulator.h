@@ -1,11 +1,18 @@
-#ifndef CONGRATULATOR_H
-#define CONGRATULATOR_H
+#pragma once
+#include <QPair>
+#include <QObject>
 
 
-class Congratulator
+class Congratulator: public QObject
 {
+    Q_OBJECT
 public:
-    Congratulator();
+    Congratulator(QObject* parent=nullptr);
+private slots:
+
+signals:
+    void tryAgain();
+    void newGame();
+
 };
 
-#endif // CONGRATULATOR_H

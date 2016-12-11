@@ -19,7 +19,8 @@ SOURCES += \
     puzzleengine.cpp \
     scorekeeper.cpp \
     orderkeeper.cpp \
-    congratulator.cpp
+    congratulator.cpp \
+    scorehandler.cpp
 
 
 HEADERS  += \
@@ -30,7 +31,8 @@ HEADERS  += \
     puzzleengine.h \
     scorekeeper.h \
     orderkeeper.h \
-    congratulator.h
+    congratulator.h \
+    scorehandler.h
 
 
 FORMS    += \

@@ -1,6 +1,6 @@
 #include "congratulator.h"
 
-Congratulator::Congratulator()
+Congratulator::Congratulator(QObject *parent):QObject (parent)
 {
 
 }

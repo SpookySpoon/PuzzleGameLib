@@ -1,6 +1,6 @@
 #include "scorekeeper.h"
 
-ScoreKeeper::ScoreKeeper()
+ScoreKeeper::ScoreKeeper(QObject* parent):QObject(parent)
 {
 
 }

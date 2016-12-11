@@ -12,6 +12,8 @@ private:
     QList<int8_t> initOrder;
     bool gameRegime;
     void shuffleButtons();
+    int numberOfMoves; //Счетчик времени
+    int elapsedSeconds; //Счетчик ходов
 signals:
     void disposition(QList<int8_t>);
     void stats(QPair<bool,QPair<int16_t,int16_t>>);

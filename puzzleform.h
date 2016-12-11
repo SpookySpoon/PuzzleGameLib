@@ -35,6 +35,7 @@ private:
     void startOver();//соритрует кнопки в исходное положение согласно "buttonInitialOrder" и ставит метку "countScore" на false, чтобы статистика этого раунда не учитвалась
     Ui::PuzzleForm *ui;
     QBasicTimer timer; //Таймер на длительность игры
+
     QList<PuzButton*> puzzlePieces; //Записываются ссылки на кнопки пазла в момент их создания по возрастанию названий (1-15)
     QList<int> buttonInitialOrder; //после "on_buttonRestart_clicked()" записывается порядок кнопок на доске в начале игры
     int numberOfMoves; //Счетчик времени
