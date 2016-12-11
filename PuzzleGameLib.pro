@@ -15,14 +15,22 @@ SOURCES += \
     congratswindow.cpp\
     puzzleform.cpp \
     scoremanager.cpp \
-    puzbutton.cpp
+    puzbutton.cpp \
+    puzzleengine.cpp \
+    scorekeeper.cpp \
+    orderkeeper.cpp \
+    congratulator.cpp
 
 
 HEADERS  += \
     congratswindow.h\
     scoremanager.h \
     puzzleform.h \
-    puzbutton.h
+    puzbutton.h \
+    puzzleengine.h \
+    scorekeeper.h \
+    orderkeeper.h \
+    congratulator.h
 
 
 FORMS    += \
