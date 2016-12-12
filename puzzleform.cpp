@@ -16,6 +16,7 @@ PuzzleForm::PuzzleForm(QWidget *parent) :
     QWidget(parent),ui(new Ui::PuzzleForm),numberOfMoves(0),elapsedSeconds(0), countScore(true)
 {
     ui->setupUi(this);
+
      for(int i =0;i<ui->gridLayout->count();i++)
      {
         puzzlePieces<<qobject_cast<PuzButton*>(ui->gridLayout->itemAt(i)->widget());

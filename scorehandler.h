@@ -16,7 +16,8 @@ private:
     void compareGameScoreWithHistory();
     void reportData();
 private slots:
-    void initializeScoreData(QPair<int,int>);
+    void initScoreData(QPair<int,int>);
+    void initScoreDataNoRecord(QPair<int,int>);
     void resetHistory();
 signals:
     void gameTime(int);

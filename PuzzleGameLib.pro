@@ -18,9 +18,10 @@ SOURCES += \
     puzbutton.cpp \
     puzzleengine.cpp \
     scorekeeper.cpp \
-    orderkeeper.cpp \
     congratulator.cpp \
-    scorehandler.cpp
+    scorehandler.cpp \
+    puzpositionhandler.cpp \
+    congratulatorui.cpp
 
 
 HEADERS  += \
@@ -30,9 +31,10 @@ HEADERS  += \
     puzbutton.h \
     puzzleengine.h \
     scorekeeper.h \
-    orderkeeper.h \
     congratulator.h \
-    scorehandler.h
+    scorehandler.h \
+    puzpositionhandler.h \
+    congratulatorui.h
 
 
 FORMS    += \

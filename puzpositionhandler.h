@@ -2,10 +2,10 @@
 #define PUZZLEORDERKEEPER_H
 
 
-class OrderKeeper
+class PuzPositionHandler
 {
 public:
-    OrderKeeper();
+    PuzPositionHandler();
 };
 
 #endif // PUZZLEORDERKEEPER_H
