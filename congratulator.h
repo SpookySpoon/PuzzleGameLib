@@ -18,9 +18,11 @@ private:
     CongratulatorUI *conWindow;
     Ui::CongratsWindow *ui;
     bool gameRegime=true;
+    void setConnections();
 private slots:
-    void runWindow(QPair<int,int>);
-    void changeGameRegime(bool);
+    void prepareWindow(QPair<int,int>);
+    void setGameRegime(bool);
+    void showWindow();
 signals:
     void initScoreHandler(QPair<int,int>);
     void initScoreHandlerNoRecord(QPair<int,int>);

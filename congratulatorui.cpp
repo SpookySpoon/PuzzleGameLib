@@ -3,5 +3,5 @@
 
 CongratulatorUI::CongratulatorUI(Ui::CongratsWindow *someUi, QWidget* parent):QDialog(parent), ui(someUi)
 {
-    ui->setupUi(this);
+
 }

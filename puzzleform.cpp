@@ -25,7 +25,7 @@ PuzzleForm::PuzzleForm(QWidget *parent) :
         buttonInitialOrder<<(i);
      }
      on_buttonShuffle_clicked();
-     connect(&timer,SIGNAL(),&timer,SLOT());
+//     connect(&timer,SIGNAL(),&timer,SLOT());
 }
 
 PuzzleForm::~PuzzleForm()
