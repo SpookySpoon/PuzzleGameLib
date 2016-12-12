@@ -68,7 +68,7 @@ void CongratsWindow::on_buttonTryAgain_clicked()
 
 void CongratsWindow::on_buttonResetHistory_clicked()
 {
-    scoreManager::resetScore();
+    scoreManager::resetScore(0,0);
     CongratsWindow::initNoScoreLables();
 }
 

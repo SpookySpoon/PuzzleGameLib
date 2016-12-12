@@ -16,12 +16,12 @@ SOURCES += \
     puzzleform.cpp \
     scoremanager.cpp \
     puzbutton.cpp \
-    puzzleengine.cpp \
     scorekeeper.cpp \
     congratulator.cpp \
     scorehandler.cpp \
     puzpositionhandler.cpp \
-    congratulatorui.cpp
+    congratulatorui.cpp \
+    gameengine.cpp
 
 
 HEADERS  += \
@@ -29,12 +29,12 @@ HEADERS  += \
     scoremanager.h \
     puzzleform.h \
     puzbutton.h \
-    puzzleengine.h \
     scorekeeper.h \
     congratulator.h \
     scorehandler.h \
     puzpositionhandler.h \
-    congratulatorui.h
+    congratulatorui.h \
+    gameengine.h
 
 
 FORMS    += \

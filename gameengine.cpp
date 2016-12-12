@@ -1,20 +1,20 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "time.h"
-#include "puzzleengine.h"
+#include "gameengine.h"
 
-PuzzleEngine::PuzzleEngine(QObject* parent):QObject (parent)
+GameEngine::GameEngine(QObject* parent):QObject (parent)
 {
 
 }
 
-void PuzzleEngine::onPuzzlePushed(QPair<int8_t,int8_t> pair)
+void GameEngine::onPuzzlePushed(QPair<int8_t,int8_t> pair)
 {
 
 
 }
 
-void PuzzleEngine::shuffleButtons()
+void GameEngine::shuffleButtons()
 {
     QList<int8_t> tempList;
     srand (time(NULL));

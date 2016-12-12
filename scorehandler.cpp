@@ -6,13 +6,21 @@ ScoreHandler::ScoreHandler(QObject *parent):QObject (parent)
 
 void ScoreHandler::initScoreData(QPair<int,int> results)
 {
-    scoreManager::updateScore(gameTime,gameMoves);
+    scoreManager::updateScore(results.first,results.second);
     inputData(results);
+    emit statsReady();
 }
 
 void ScoreHandler::initScoreDataNoRecord(QPair<int,int> results)
 {
     inputData(results);
+    emit statsReady();
+}
+
+void ScoreHandler::resetHistory()
+{
+    scoreManager::resetScore(gameTime,gameMoves);
+    inputData(QPair<int,int>(gameTime,gameMoves));
 }
 
 void ScoreHandler::inputData(QPair<int,int> results)
@@ -25,7 +33,6 @@ void ScoreHandler::inputData(QPair<int,int> results)
     bestComboGameTime=history.at(2);
     bestComboGameMoves=history.at(3);
     reportData();
-    emit statsReady();
 }
 
 void ScoreHandler::reportData()

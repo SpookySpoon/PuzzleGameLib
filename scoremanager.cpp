@@ -81,8 +81,21 @@ void scoreManager::updateScore(const int time, const int moves)
     }
 }
 
-void scoreManager::resetScore()
+void scoreManager::resetScore(const int time, const int moves)
 {
     QFile tempFile("MyPuzzleScore.txt");
-    tempFile.remove();
+    QString sendResults =QString("%1[::]%2[::]%3[::]%4[::]%5").
+            arg(time).arg(moves).arg(time).arg(moves).arg(1);
+    if(tempFile.open(QIODevice::Truncate|QIODevice::WriteOnly))
+    {
+        QTextStream outStream(&tempFile);
+        outStream<<sendResults<<endl;
+        tempFile.close();
+    }
+    else
+    {
+        QMessageBox noScoreBox;
+        noScoreBox.setText("History reset failed.\nCheck your folder access parameters.");
+        noScoreBox.exec();
+    }
 }

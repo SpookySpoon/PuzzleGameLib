@@ -2,6 +2,7 @@
 #include "congratulatorui.h"
 #include "ui_congratswindow.h"
 #include "scorehandler.h"
+#include "gameengine.h"
 
 Congratulator::Congratulator(QObject *parent):QObject (parent), ui(new Ui::CongratsWindow)
 {}
@@ -39,6 +40,7 @@ void Congratulator::setGameRegime(bool regime)
 
 void Congratulator::setConnections()
 {
+    GameEngine* engine = qobject_cast<GameEngine*>(this->parent());
     connect(sHandler,SIGNAL(reportBestComboGameMoves(int)),conWindow,SLOT(setBestComboGameMoves(int)));
     connect(sHandler,SIGNAL(reportBestComboGameTime(int)),conWindow,SLOT(setBestComboGameTime(int)));
     connect(sHandler,SIGNAL(reportBestGameMoves(int)),conWindow,SLOT(setBestGameMoves(int)));
@@ -46,4 +48,15 @@ void Congratulator::setConnections()
     connect(sHandler,SIGNAL(reportGameMoves(int)),conWindow,SLOT(setGameMoves(int)));
     connect(sHandler,SIGNAL(reportGameTime(int)),conWindow,SLOT(setGameTime(int)));
     connect(sHandler,SIGNAL(statsReady()),this,SLOT(showWindow()));
+    if(engine)
+    {
+        connect(ui->buttonResetHistory,SIGNAL(clicked()),sHandler,SLOT(close()));
+        connect(ui->buttonNewGame,SIGNAL(clicked()),engine,SLOT(close()));
+        connect(ui->buttonTryAgain,SIGNAL(clicked()),engine,SLOT(close()));
+        connect(ui->buttonQuit,SIGNAL(clicked()),conWindow,SLOT(close()));
+        connect(ui->buttonResetHistory,SIGNAL(clicked()),sHandler,SLOT(resetHistory()));
+        connect(ui->buttonNewGame,SIGNAL(clicked()),engine,SLOT(newGame()));
+        connect(ui->buttonTryAgain,SIGNAL(clicked()),engine,SLOT(tryAgain()));
+        connect(ui->buttonQuit,SIGNAL(clicked()),engine,SLOT(close()));
+    }
 }

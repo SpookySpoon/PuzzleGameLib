@@ -6,5 +6,5 @@ class scoreManager
 public:
     static void updateScore(const int time, const int moves);
     static QList<int> getScore();
-    static void resetScore();
+    static void resetScore(const int time, const int moves);
 };
